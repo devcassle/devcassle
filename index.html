@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Cassle | Java Developer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts for a modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -29,7 +28,6 @@
       min-height: 100vh;
       font-family: var(--font-body);
       color: var(--text-main);
-      /* Purplish animated galaxy background (royalty-free gif) */
       background: url('https://i.pinimg.com/originals/6d/38/87/6d38873ea4458720f25728b1a3438059.gif') center center / cover fixed;
     }
 
@@ -54,12 +52,11 @@
       padding-bottom: 0;
     }
 
-    /* Avatar container: keep glow + circular border, add overflow hidden for image */
     .avatar {
       width: 138px; height: 138px;
       border-radius: 50%;
       border: 5px solid var(--avatar-border);
-      background: var(--avatar-main); /* fallback color if image missing */
+      background: var(--avatar-main); 
       box-shadow:
         0 0 40px 0 var(--avatar-glow),
         0 4px 22px #4d206088;
@@ -68,7 +65,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      overflow: hidden; /* clip image to circle */
+      overflow: hidden; 
       animation: avatarGlow 3s ease-in-out infinite alternate;
     }
     @keyframes avatarGlow {
@@ -84,11 +81,10 @@
       }
     }
 
-    /* image that fills the avatar circle */
     .avatar img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* ensures the image fills and stays centered */
+      object-fit: cover; 
       display: block;
       border-radius: 50%;
       user-select: none;
@@ -241,7 +237,6 @@
       padding: 8px 12px;
       border-radius: 12px;
     }
-    /* remaining CSS unchanged... (kept for brevity) */
     @media (max-width: 850px){
       .glass{ max-width:98vw; padding: 18px;}
       .skills-categories{ grid-template-columns:1fr; gap:18px;}
@@ -267,7 +262,6 @@
 </head>
 <body>
   <div class="glass profile">
-    <!-- Use the image you uploaded: images/download.jpg -->
     <div class="avatar">
       <img src="images/download.jpg" alt="Cassle avatar" loading="lazy">
     </div>
