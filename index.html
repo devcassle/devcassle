@@ -4,187 +4,289 @@
   <meta charset="UTF-8">
   <title>Cassle | Java Developer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-gradient: linear-gradient(115deg, #1c1024 0%, #231533 100%);
+      --glass-bg: rgba(32, 16, 44, 0.86);
+      --glass-border: 1px solid rgba(164, 98, 228, 0.16);
+      --primary: #c65fd6;      /* bright pink/purple accent */
+      --secondary: #6a359c;    /* darker purple accent */
+      --hover: #e0a3fa;        /* light purple-pink for hover */
+      --text-main: #ede9fc;
+      --text-sub: #b289d1;
+      --shadow: 0 8px 32px rgba(96, 32, 96, 0.10);
+      --section-title-size: 1.45rem;
+      --font-title: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      --font-body: 'Roboto', 'Montserrat', Arial, sans-serif;
+    }
+
     body {
       margin: 0; padding: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: url('https://i.pinimg.com/736x/0c/bb/f8/0cbbf8cf7ed369f0ebeabbc84b82d6a5.jpg') no-repeat center center fixed;
-      background-size: cover;
       min-height: 100vh;
-      color: #ececec;
+      font-family: var(--font-body);
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      background-attachment: fixed;
+      background-size: cover;
     }
+
     .glass {
-      background: rgba(0, 0, 0, 0.76);
+      background: var(--glass-bg);
       border-radius: 18px;
-      box-shadow: 0 6px 32px rgba(0,0,0,0.18);
-      margin: 28px auto;
-      padding: 30px 32px;
+      border: var(--glass-border);
+      box-shadow: var(--shadow);
+      margin: 34px auto;
+      padding: 34px 38px;
       max-width: 980px;
-      backdrop-filter: blur(2.5px);
-      border: 1px solid rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(4.5px) saturate(140%);
+      /* increased blur for more glass effect */
     }
+
     .profile {
-      text-align: center;
-      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 18px;
+      background: transparent;
+      box-shadow: none;
+      padding-bottom: 0;
     }
     .avatar {
-      margin-top: 10px;
-      width: 120px; height: 120px;
+      margin-top: 8px;
+      width: 128px; height: 128px;
       border-radius: 50%;
-      border: 4px solid #000000;
+      border: 4px solid var(--primary);
       object-fit: cover;
-      background: #ff00dd;
+      box-shadow: 0 4px 22px #4d2060a0;
+      background: var(--secondary);
     }
     .name {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin: 10px 0;
-      color: #ff00dd;
-      text-shadow: 0 1px 12px #28313a;
+      font-family: var(--font-title);
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin: 16px 0 3px 0;
+      color: var(--primary);
+      text-shadow: 0 1px 14px #2c1646, 0 2px 0 #b289d1;
+      letter-spacing: 1.2px;
     }
     .desc {
-      font-size: 1.25rem;
-      margin-bottom: 8px;
-      background: #000000;
+      font-size: 1.21rem;
+      margin-bottom: 10px;
+      color: var(--text-sub);
+      background: rgba(52,10,85,0.38);
       display: inline-block;
-      padding: 4px 18px;
-      border-radius: 10px;
-      color: #cd76e7;
+      padding: 6px 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #1b082a44;
+      letter-spacing: .7px;
     }
     .location {
-      font-size: 1rem;
-      color: #33022c;
-      margin-bottom: 4px;
+      font-size: 1.07rem;
+      color: #c68fd6;
+      margin-bottom: 5px;
+      letter-spacing: .35px;
     }
     .contacts {
-      margin: 4px auto 10px;
-      font-size: 1.1rem;
+      margin: 7px auto 14px;
+      font-size: 1.12rem;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .contacts a {
-      color: #00aeff;
-      margin: 0 10px;
+      color: var(--primary);
+      margin: 0 5px;
       text-decoration: none;
-      font-size: 1.1em;
+      font-weight: 500;
+      font-size: 1.11em;
+      transition: color 0.16s;
+      padding:3px 8px;
+      border-radius: 7px;
+      border: 1.5px solid transparent;
     }
     .contacts a:hover {
       text-decoration: underline;
-      color: #0033ff;
+      color: var(--hover);
+      border: 1.5px solid var(--hover);
+      background: rgba(130, 64, 170, 0.14);
     }
+
     .section-title {
-      font-size: 1.65rem;
-      color: #362935;
-      margin-bottom: 13px;
+      font-family: var(--font-title);
+      font-size: var(--section-title-size);
+      color: var(--hover);
+      margin-bottom: 14px;
       font-weight: bold;
-      letter-spacing: 2px;
+      letter-spacing: 2.2px;
+      text-shadow: 0 4px 50px #c65fd649;
     }
     .about {
-      font-size: 1.15rem;
-      color: #ffffff;
-      margin-bottom: 0;
-    }
-    .roles-grid,.skills-grid,.courses-grid,.socials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
-    }
-    .card {
-      background: rgba(28,32,38, 0.95);
+      font-size: 1.19rem;
+      color: var(--text-main);
+      margin-bottom: 1px;
+      line-height: 1.7;
+      letter-spacing: .08em;
+      background: rgba(44,16,53,0.15);
+      padding: 18px 18px 9px 22px;
       border-radius: 12px;
-      padding: 22px 16px;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 10px #25103a55;
+    }
+    .roles-grid, .skills-grid, .courses-grid, .socials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: rgba(44, 16, 68, 0.92);
+      border-radius: 13px;
+      padding: 22px 18px;
+      box-shadow: 0 2px 16px #3921582a;
       text-align: center;
-      color: #ff00dd;
-      transition: transform 0.14s, box-shadow 0.13s;
-      border: 1px solid #312c25;
+      color: var(--primary);
+      transition: transform 0.13s, box-shadow 0.14s, border 0.13s;
+      border: 2px solid var(--glass-border);
+      position: relative;
     }
     .card:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 6px 30px rgba(50,40,20,0.14);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 32px #a23cd125;
+      border: 2px solid var(--hover);
+      z-index:2;
     }
-    .role-logo {
-      width: 48px; height: 48px;
-      margin-bottom: 14px;
-      border-radius: 8px;
-      object-fit: contain;
-      background: #241f19;
-      box-shadow: 0 2px 15px #16161d;
-    }
-    .card-role,.card-prev-role {
-      font-size: 1.2rem;
-      color: #ff00dd;
-      margin-bottom: 7px;
+    .card-role {
+      font-size: 1.18rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-family: var(--font-title);
+      letter-spacing: .8px;
     }
     .card-desc {
-      color: ##ff00dd;
-      font-size: 1.05rem;
+      color: #ffeae8;
+      font-size: 1.08rem;
       margin-bottom: 8px;
     }
-    .card-link {
-      color: #ff00dd;
-      font-size: 1rem;
+    .card-link a {
+      color: var(--hover);
       text-decoration: underline;
+      font-weight: 500;
+      font-size: 1.02rem;
+      transition: color 0.15s;
     }
+    .card-link a:hover { color: var(--primary);}
     .members {
       font-size: 0.97rem;
-      color: #ff00dd;
-      margin-bottom: 9px;
+      color: #e0a3fa;
+      margin-bottom: 8px;
     }
     .note {
-      color: #6fe1bf;
-      font-size: 0.98rem;
-      margin-top: 18px;
+      color: #8fdfff;
+      font-size: 1rem;
+      margin-top: 20px;
       text-align: center;
+      font-weight: 500;
+      background: linear-gradient(92deg,#242042 0%,#2d0b33 100%);
+      padding: 8px 12px;
+      border-radius: 12px;
     }
-    .skills-categories{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
+
+    /* SKILLS + SERVICES SECTION */
+    .skills-categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
     }
-    .skills-list{
-      padding-left:0;
+    .skills-list, .tasks-list {
+      padding-left: 0;
       list-style: none;
-      color: #ff00dd;
+      color: var(--primary);
+      margin: 0;
     }
     .skills-list li, .tasks-list li {
-      padding: 5px 0;
-      font-size: 1.07rem;
-      display:flex;align-items:center;
-      gap:8px;
-    }
-    .tasks-list{
-      padding-left:0;
-      list-style:none;
-      color:#ff00dd;
+      font-size: 1.09rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      letter-spacing: .05em;
+      font-weight: 500;
     }
     .skills-list svg, .tasks-list svg {
-      width:19px;height:19px; vertical-align:middle;fill:#ffd76d;flex-shrink:0;
+      width: 22px; height: 22px;
+      vertical-align: middle;
+      fill: #e0a3fa;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 6px #6a359c66);
     }
-    @media (max-width: 700px){
-      .glass{ max-width: 99vw;padding: 16px;}
-      .section-title{ font-size:1.18rem;}
-      .name{ font-size:1.7rem;}
+
+    /* SOCIALS */
+    .socials-grid .card {
+      background: #2d0b33d0;
+      border: 2px solid #3c1760a9;
+      color: var(--hover);
+      font-size: 1.15rem;
+    }
+    .socials-grid .card a {
+      color: var(--primary);
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+      font-size: 1.18rem;
+      letter-spacing: .07em;
+      padding: 3px 0;
+    }
+    .socials-grid .card:hover {
+      background: #3e185daa;
+    }
+    .socials-grid .card a:hover { color: var(--hover); }
+
+    @media (max-width: 850px){
+      .glass{ max-width:98vw; padding: 18px;}
+      .skills-categories{ grid-template-columns:1fr; gap:18px;}
+      .section-title{ font-size:1.03rem;}
+      .name{ font-size:1.5rem;}
+      .about { font-size:.98rem;}
+      .roles-grid, .skills-grid, .socials-grid{ grid-template-columns:1fr;}
+    }
+
+    /* Simple footer for extra professionalism */
+    footer {
+      text-align: center;
+      padding: 22px 0 12px 0;
+      color: #ab79c4;
+      font-size: 1rem;
+      letter-spacing: .08em;
+      font-family: var(--font-title);
+      width:100%;
+      background: rgba(44, 16, 68, 0.45);
+      margin-top: 12px;
     }
   </style>
 </head>
 <body>
   <div class="glass profile">
+    <!-- Add your avatar if you want! -->
+    <!-- <img class="avatar" src="YOUR_AVATAR_URL.jpg" alt="Cassle Avatar"> -->
     <div class="name">Cassle</div>
     <div class="desc">Java Developer & Minecraft Server Staff</div>
     <div class="location">United Kingdom</div>
     <div class="contacts">
       <a href="mailto:dameyute@gmail.com" title="Email">Email</a>
-      <a href="https://discordapp.com/users/891492352672280586" title="Discord">dev.cassle</a>
-      <a href="https://github.com/devcassle" title="GitHub">Github</a>
+      <a href="https://discordapp.com/users/891492352672280586" title="Discord">Discord: dev.cassle</a>
+      <a href="https://github.com/devcassle" title="GitHub">GitHub</a>
     </div>
   </div>
 
   <div class="glass">
     <div class="section-title">About Me</div>
     <p class="about">
-      I'm Cassle—passionate 16-year-old, Java hobbyist, and server enthusiast.<br>
-      I’ve been coding in Java for 2 years, mostly in <strong>IntelliJ IDEA</strong>. I enjoy building and managing Minecraft servers, working on both staff roles and development projects.
-      Always eager to learn more, I’m available for commissions (cheap or even free for quick projects)!
-      Skills include plugin development, server moderation, and community engagement.
+      I'm Cassle—a passionate 16-year-old Java hobbyist and server enthusiast.<br>
+      I’ve been coding in Java for 2 years, primarily using <strong>IntelliJ IDEA</strong>. My interests revolve around building and managing Minecraft servers—fulfilling both technical development and community staff roles.<br>
+      Always open to learning and growing, I’m available for commissions (often free for quick projects!).<br><br>
+      Skilled in plugin development, server moderation, and fostering engaged communities.
     </p>
   </div>
 
@@ -193,36 +295,37 @@
     <div class="roles-grid">
       <div class="card">
         <div class="card-role">xnetwork.org</div>
-        <div class="members">Manager <br>450+ members</div>
+        <div class="members">Manager<br>450+ members</div>
         <div class="card-link"><a href="#">Discord</a></div>
       </div>
       <div class="card">
         <div class="card-role">neonpvp.net</div>
-        <div class="members">Developer <br>1000+ members</div>
+        <div class="members">Developer<br>1000+ members</div>
         <div class="card-desc">No longer continued</div>
         <div class="card-link"><a href="#">Discord</a></div>
       </div>
       <div class="card">
         <div class="card-role">Invadedlands.net</div>
-        <div class="members">Moderator / Developer <br>29,000+ members</div>
+        <div class="members">Moderator / Developer<br>29,000+ members</div>
         <div class="card-desc">Coded a little for them</div>
         <div class="card-link"><a href="#">Discord</a></div>
       </div>
       <div class="card">
         <div class="card-role">pikanetwork.net</div>
-        <div class="members">Moderator <br>140,000+ members</div>
+        <div class="members">Moderator<br>140,000+ members</div>
         <div class="card-link"><a href="#">Discord</a></div>
       </div>
       <div class="card">
         <div class="card-role">Visualpvp.net</div>
-        <div class="members">Builder / Admin <br>500+ members</div>
+        <div class="members">Builder / Admin<br>500+ members</div>
         <div class="card-link"><a href="#">Discord</a></div>
       </div>
     </div>
     <div class="note">
-      Have done commissions for example projects—always looking to build experience even more!
+      Always looking to grow—available for commissions and always open to new opportunities!
     </div>
   </div>
+
   <div class="glass">
     <div class="section-title">Skills & Services</div>
     <div class="skills-categories">
@@ -251,7 +354,7 @@
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M9 12h6M12 9v6"/></svg>
-          Bug Fixing / Trouble-shooting
+          Bug Fixing / Troubleshooting
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4z"/></svg>
@@ -267,6 +370,7 @@
       Projects can be <strong>free</strong> if simple! More time = small fee.
     </div>
   </div>
+
   <div class="glass">
     <div class="section-title">Contact & Socials</div>
     <div class="socials-grid">
@@ -275,5 +379,8 @@
       <div class="card"><a href="https://github.com/devcassle">GitHub</a></div>
     </div>
   </div>
+  <footer>
+    &copy; 2025 Cassle | Portfolio generated professionally
+  </footer>
 </body>
 </html>
