@@ -237,6 +237,47 @@
       padding: 8px 12px;
       border-radius: 12px;
     }
+
+    /* Skills section specific styles */
+    .skills-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .skills-card {
+      text-align: left;
+      padding: 18px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(58,22,82,0.9), rgba(38,13,63,0.85));
+      box-shadow: 0 6px 22px rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .skills-card h4 {
+      margin: 0 0 10px 0;
+      font-family: var(--font-title);
+      color: var(--hover);
+      letter-spacing: .9px;
+      font-size: 1.02rem;
+    }
+    .skills-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skills-list li {
+      background: rgba(255,255,255,0.04);
+      color: var(--text-main);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 0.98rem;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
     @media (max-width: 850px){
       .glass{ max-width:98vw; padding: 18px;}
       .skills-categories{ grid-template-columns:1fr; gap:18px;}
@@ -326,9 +367,35 @@
 
   <div class="glass">
     <div class="section-title">Skills & Services</div>
+
     <div class="skills-categories">
-      <!-- skills lists unchanged -->
+      <div class="skills-card">
+        <h4>Languages</h4>
+        <ul class="skills-list">
+          <li>Java</li>
+          <li>Kotlin</li>
+          <li>C++</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="skills-card">
+        <h4>Build & Tooling</h4>
+        <ul class="skills-list">
+          <li>Maven</li>
+          <li>Gradle</li>
+        </ul>
+      </div>
+
+      <div class="skills-card">
+        <h4>Specialties</h4>
+        <ul class="skills-list">
+          <li>Backend</li>
+          <li>Fullstack</li>
+        </ul>
+      </div>
     </div>
+
     <div class="note">
       <strong>Alot more skills too</strong>
     </div>
